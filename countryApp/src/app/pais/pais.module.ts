@@ -4,6 +4,8 @@ import { CapitalComponent } from './pages/capital/capital.component';
 import { PaisesComponent } from './pages/paises/paises.component';
 import { RegionComponent } from './pages/region/region.component';
 import { OnlyPaisComponent } from './pages/only-pais/only-pais.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -21,7 +23,9 @@ import { OnlyPaisComponent } from './pages/only-pais/only-pais.component';
     OnlyPaisComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class PaisModule { }
