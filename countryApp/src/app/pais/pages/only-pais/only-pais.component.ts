@@ -15,11 +15,11 @@ export class OnlyPaisComponent implements OnInit {
 
   constructor(private PaisService: PaisService) { }
 
-  buscar(){
+  buscar(termino:string){
     this.hayError = false;
-    console.log(this.termino);
+    this.termino = termino;
 
-    this.PaisService.buscarPais(this.termino)
+    this.PaisService.buscarPais(termino)
     .subscribe( (paises) => {
       console.log(paises);
       this.paises = paises;
@@ -27,6 +27,10 @@ export class OnlyPaisComponent implements OnInit {
       this.hayError = true;
       this.paises = [];
     });
+  }
+
+  sugerencias(termino:string){
+    this,this.hayError = false;
   }
 
   ngOnInit(): void {
