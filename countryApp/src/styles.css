@@ -1,3 +1,7 @@
 .small-flag{
     width: 50px;
 }
+@-ms-viewport{
+    width: device-width;
+  }
+  
