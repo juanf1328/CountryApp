@@ -21,10 +21,10 @@
                     <strong>Poblacion</strong>{{pais.population | number}}
                 </li>
                 <li class="list-group-item">
-                    <strong>NumberCode</strong>{{pais.postalCode}}
+                    <strong>NumberCode</strong>{{pais.numericCode}}
                 </li>
                 <li class="list-group-item">
-                    <strong>Code</strong>{{pais.cca3}}
+                    <strong>Code</strong>{{pais.alpha3Code}}
                 </li>
             </ul>
         </div>
@@ -32,7 +32,17 @@
     <h3>Traduction</h3>
     <div class="row">
         <div class="col">
-            <span class="badge bg-primary mr-1">{{pais.translations}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.br}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.de}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.es}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.fa}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.fr}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.hr}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.hu}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.it}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.ja}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.nl}}</span>
+            <span class="badge bg-primary mr-1">{{pais.translations.pt}}</span>
         </div>
     </div>
     <!-- <pre class="mt-5">
