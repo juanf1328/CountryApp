@@ -9,7 +9,7 @@ import { PaisService } from '../../services/pais.service';
 })
 export class RegionComponent implements OnInit {
 
-  regiones: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+  regiones: string[] = ['EU', 'EFTA', 'CARICOM', 'PA', 'AU', 'USAN', 'EEU', 'AL', 'ASEAN', 'CAIS', 'CEFTA', 'NAFTA', 'SAARC'];
   regionActiva: string = '';
   paises: Country[] = [];
 
@@ -22,15 +22,14 @@ export class RegionComponent implements OnInit {
   // }
 
 
-  activarRegion(region: string){
+  activarRegion(regionalbloc: string){
+    if(regionalbloc === this.regionActiva){return;}
 
-    if(region === this.regionActiva){return;}
-
-    this.regionActiva = region;
+    this.regionActiva = regionalbloc;
     this.paises = [];
-
-    this.PaisService.buscarRegion(region)
-    .subscribe(paises => this.paises = paises);
+    this.PaisService.buscarRegion(regionalbloc)
+    .subscribe (paises => this.paises = paises);
+   
   }
 
 
