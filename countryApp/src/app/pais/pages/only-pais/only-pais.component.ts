@@ -13,9 +13,12 @@ export class OnlyPaisComponent implements OnInit {
   hayError: boolean = false;
   paises: Country[] = [];
 
+  paisesSugeridos: Country[] = [];
+  mostrarSugerencias: boolean = false;
   constructor(private PaisService: PaisService) { }
 
   buscar(termino:string){
+    this.mostrarSugerencias = false;
     this.hayError = false;
     this.termino = termino;
 
@@ -30,7 +33,18 @@ export class OnlyPaisComponent implements OnInit {
   }
 
   sugerencias(termino:string){
-    this,this.hayError = false;
+    this.hayError = false;
+    this.termino = termino;
+    this.mostrarSugerencias = true;
+
+    this.PaisService.buscarPais(termino)
+    .subscribe(paises => this.paisesSugeridos = paises.splice(0,5),
+    (err)=> this.paisesSugeridos=[]
+    );
+  }
+
+  buscarSugerido(termino: string){
+    this.buscar(termino);
   }
 
   ngOnInit(): void {
